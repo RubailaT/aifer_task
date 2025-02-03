@@ -86,21 +86,30 @@ class AppUtils {
     required nextOnTap,
   }) {
     return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
         GestureDetector(
           onTap: previousOnTap,
           child: Container(
-            width: 166,
-            height: 56,
+            width: 100,
+            height: 50,
             decoration: BoxDecoration(
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black
+                      .withOpacity(0.1), // Shadow color with opacity
+                  blurRadius: 10, // Blur effect
+                  offset: Offset(0, 4), // Shadow position (x, y)
+                  spreadRadius: 2, // Spread of the shadow
+                ),
+              ],
               borderRadius: BorderRadius.circular(15),
-              color: Colors.cyan,
+              color: ColorClass.white,
             ),
             child: Center(
               child: Text(
                 'PREVIOUS',
-                style: TextStyleClass.primaryFont400(14, ColorClass.white),
+                style: TextStyleClass.primaryFont400(14, ColorClass.black),
               ),
             ),
           ),
@@ -109,21 +118,39 @@ class AppUtils {
         GestureDetector(
           onTap: nextOnTap,
           child: Container(
-            width: 166,
-            height: 56,
+            width: 100,
+            height: 50,
             decoration: BoxDecoration(
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black
+                      .withOpacity(0.1), // Shadow color with opacity
+                  blurRadius: 10, // Blur effect
+                  offset: Offset(0, 4), // Shadow position (x, y)
+                  spreadRadius: 2, // Spread of the shadow
+                ),
+              ],
               borderRadius: BorderRadius.circular(15),
-              color: Colors.cyan,
+              color: ColorClass.white,
             ),
             child: Center(
               child: Text(
                 'NEXT',
-                style: TextStyleClass.primaryFont400(14, ColorClass.white),
+                style: TextStyleClass.primaryFont400(14, ColorClass.black),
               ),
             ),
           ),
         )
       ],
+    );
+  }
+
+  static BoxShadow boxShadow() {
+    return BoxShadow(
+      color: Colors.black.withOpacity(0.1), // Shadow color with opacity
+      blurRadius: 10, // Spread of the blur
+      offset: Offset(0, 4), // Shadow position (x, y)
+      spreadRadius: 2, // How far the shadow spreads
     );
   }
 }

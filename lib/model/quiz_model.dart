@@ -1,20 +1,17 @@
-// lib/models/quiz_question.dart
-// import 'dart:convert';
-
-class QuizQuestion {
+class QuizQuestionModel {
   final String question;
   final List<String> options;
   final int correctAnswer;
   final String explanation;
-  String? selectedAnswer;
+  int? selectedAnswerIndex; // Changed from String? selectedAnswer
   bool isAnswered;
 
-  QuizQuestion({
+  QuizQuestionModel({
     required this.question,
     required this.options,
     required this.correctAnswer,
     required this.explanation,
-    this.selectedAnswer,
+    this.selectedAnswerIndex, // Updated this line
     this.isAnswered = false,
   });
 
@@ -23,16 +20,17 @@ class QuizQuestion {
         'options': options,
         'correctAnswer': correctAnswer,
         'explanation': explanation,
-        'selectedAnswer': selectedAnswer,
+        'selectedAnswerIndex': selectedAnswerIndex, // Updated this line
         'isAnswered': isAnswered,
       };
 
-  factory QuizQuestion.fromJson(Map<String, dynamic> json) => QuizQuestion(
+  factory QuizQuestionModel.fromJson(Map<String, dynamic> json) =>
+      QuizQuestionModel(
         question: json['question'],
         options: List<String>.from(json['options']),
         correctAnswer: json['correctAnswer'],
         explanation: json['explanation'],
-        selectedAnswer: json['selectedAnswer'],
+        selectedAnswerIndex: json['selectedAnswerIndex'], // Updated this line
         isAnswered: json['isAnswered'],
       );
 }

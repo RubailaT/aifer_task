@@ -5,4 +5,5 @@ class ColorClass {
   static const Color black = Color(0xff000000);
   static const Color transparent = Colors.transparent;
   static const Color bgColor = Color(0xFF121212);
+  static const Color red = Color.fromARGB(255, 230, 87, 87);
 }

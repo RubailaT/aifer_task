@@ -1,5 +1,4 @@
 import 'package:aifer_task/provider/quiz_provider.dart';
-// import 'package:aifer_task/screens/quiz_app_screen.dart';
 import 'package:aifer_task/screens/quiz_app_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -15,6 +14,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Quiz App',
       theme: ThemeData(
         primarySwatch: Colors.blue,
